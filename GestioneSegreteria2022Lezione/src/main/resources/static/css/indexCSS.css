@@ -1,0 +1,24 @@
+header{
+	text-align: center;
+}
+
+footer{
+	text-align: right;
+}
+
+img{
+	border-radius: 50%;
+}
+
+/*commento
+article>h2{
+	text-shadow: 3px 1px blue;
+}*/
+
+.titolo{
+	text-shadow: 3px 1px blue;
+}
+
+a:visited{
+	color: red;
+}

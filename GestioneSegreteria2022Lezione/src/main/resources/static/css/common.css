@@ -1,0 +1,20 @@
+table {
+	border: 1px solid blue;
+	max-width: 5000px;
+}
+
+th, td {
+	border: 2px solid black;
+}
+
+body {
+  background-color: lightblue;
+}
+
+#titolo {
+	border-style: dashed;
+}
+
+ul{
+	list-style-type: square;
+}
