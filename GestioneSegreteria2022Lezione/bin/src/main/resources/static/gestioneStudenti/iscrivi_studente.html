@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Elenco Studenti</title>
+	</head>
+	<body>
+		<h1>Iscrizione Nuovo Studente</h1>
+		<h2>Compila di dati dello studente</h2>
+		<form method="get" action="faiIscrizione">
+			Matricola:
+			<input type="text" name="matricola" /> <br/>
+			Nome:
+			<input type="text" name="nome" placeholder="Scrivi qui il tuo nome"/> <br/>
+			Cognome:
+			<input type="text" name="cognome" /> <br/>
+			Data di Nascita
+			<input type="datetime-local" name="dataNascita" /> <br/>
+			Età
+			<input type="number" name="eta" min="18" max="130" /> <br/>
+			Corso di Laurea
+			<select name="cdl">
+				<option value="inf">Informatica</option>
+				<option value="fis">Fisica</option>
+				<option value="sn">Scienze della nutrizione</option>
+			</select> <br/>
+			Sesso
+			
+			<input type="radio" name="sesso" value="m">Maschio</input>
+			<input type="radio" name="sesso" value="f" checked>Femmina</input>
+			
+			<input type="submit" />
+		</form>
+	</body>
+</html>

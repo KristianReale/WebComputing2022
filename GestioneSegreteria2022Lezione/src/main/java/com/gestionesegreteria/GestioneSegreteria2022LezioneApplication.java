@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class GestioneSegreteria2022LezioneApplication {
 
 	public static void main(String[] args) {
-		
 		SpringApplication.run(GestioneSegreteria2022LezioneApplication.class, args);
 	}
 
