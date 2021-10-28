@@ -50,15 +50,6 @@ header+*{
 	clear: left;
 }
 
-article{
-	float: left;
-	width: 50%;
-}
-
-article.lati{
-	float: left;
-	width: 25%;
-}
 
 /*
 .contenuto{
@@ -78,3 +69,23 @@ article>h2{
 a:visited{
 	color: red;
 }*/
+
+article{
+	float: left;
+	width: 50%;
+}
+
+article.lati{
+	float: left;
+	width: 25%;
+}
+
+
+@media screen and (max-width: 800px) {
+	article, article.lati, li{
+		float: none;
+		width: 100% ;
+		display: block !important;
+	}
+}
+	
