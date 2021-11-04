@@ -1,0 +1,92 @@
+header{
+	text-align: left;
+}
+
+footer{
+	text-align: right;
+	clear: left;
+}
+
+img#logo_unical{
+	border-radius: 20%;
+	border-style: solid;
+	padding-right: 15px;
+	margin-right: 15px;
+}
+
+nav{
+	overflow: hidden;
+	background-color: black;
+	color: white;
+	font-family: Helvetica;
+}
+
+nav li{
+	display: inline;
+	padding: 14px 16px;
+	
+}
+
+nav a:link, nav a:visited{
+	color: white;
+	text-decoration: none;
+}
+
+nav li:hover{
+	background-color: green;
+}
+
+
+#logo_segreteria{
+	float: left;
+}
+
+aside{
+	position: absolute;
+	right: 100px;
+}
+
+header+*{
+	clear: left;
+}
+
+
+/*
+.contenuto{
+	clear: left;
+}*/
+
+/*commento
+article>h2{
+	text-shadow: 3px 1px blue;
+}*/
+
+.titolo{
+	text-shadow: 1px 1px blue;
+}
+
+/*
+a:visited{
+	color: red;
+}*/
+
+article{
+	float: left;
+	width: 50%;
+}
+
+article.lati{
+	float: left;
+	width: 25%;
+}
+
+
+@media screen and (max-width: 800px) {
+	article, article.lati, li{
+		float: none;
+		width: 100% ;
+		display: block !important;
+	}
+}
+
+	
