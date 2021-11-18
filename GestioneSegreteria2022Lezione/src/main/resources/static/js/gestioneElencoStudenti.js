@@ -16,6 +16,10 @@ function aggiungiEventi(){
 		var cognome = campoCognome.value;
 		var nome = campoNome.value;
 		
+		campoMatricola.value = "";
+		campoCognome.value = "";
+		campoNome.value = "";
+		
 		console.log(matricola);
 		console.log(cognome);
 		console.log(nome);
@@ -27,6 +31,35 @@ function aggiungiEventi(){
 		aggiungiStudenteInTabella(studente);
 		
 	});
+	
+	btnCancella.addEventListener("click", function(){
+		var selectedCheckBoxes = document.querySelectorAll("input:checked");
+		
+		if (selectedCheckBoxes.length > 0){
+			selectedCheckBoxes.forEach(function(checkBox, indice){
+				console.log(checkBox);
+				console.log(checkBox.getAttribute("id"));
+				
+				var matricola = checkBox.getAttribute("id");
+				var studente = studentiConId[matricola];
+				console.log(studente.nome);
+				
+				delete studentiConId[matricola];
+				
+				cancellaStudenteDaTabella(studente);
+				
+			});
+		}else{
+			alert("Si prega di selezionare almeno un elemento");
+		}
+		
+	});
+	
+}
+
+function cancellaStudenteDaTabella(studente){
+	var rigaDaCancellare = document.querySelector("#riga_" + studente.matricola);
+	rigaDaCancellare.remove();
 }
 
 
@@ -37,19 +70,25 @@ function popolaTabella(){
 }
 
 function aggiungiStudenteInTabella(studente){
-	var tableElement = document.querySelector("#tabellaStudenti");
+	var tableElement = document.querySelector("#tabellaStudenti tbody");
 	var riga = tableElement.insertRow(-1);
 	//riga.innerHTML = "<td>" + studente.matricola + "</td>"
 	//				+ "<td>" + studente.nome + "</td>"
 	//				+ "<td>" + studente.cognome + "</td>";
 	
-	var cellaMatricola = riga.insertCell(0);
+	riga.setAttribute("id", "riga_" + studente.matricola);
+	
+	var cellaCheckbox = riga.insertCell(0);
+	cellaCheckbox.innerHTML = "<input id=\"" + studente.matricola + "\" type=\"checkbox\" />";
+	
+	
+	var cellaMatricola = riga.insertCell(1);
 	cellaMatricola.textContent = studente.matricola;
 	
-	var cellaCognome = riga.insertCell(1);
+	var cellaCognome = riga.insertCell(2);
 	cellaCognome.textContent = studente.cognome;
 	
-	var cellaNome = riga.insertCell(2);
+	var cellaNome = riga.insertCell(3);
 	cellaNome.textContent = studente.nome;
 	
 
