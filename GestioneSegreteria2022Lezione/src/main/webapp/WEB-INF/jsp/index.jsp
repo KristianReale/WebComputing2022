@@ -25,16 +25,16 @@
 					<a href="https://www.treccani.it/vocabolario/segreteria/">
 						<img src="immagini/segreteria.jpg" />
 					</a>
-					<figcaption>Questa √® la nostra segreteria</figcaption>
+					<figcaption>Questa Ë la nostra segreteria</figcaption>
 				</figure>
 				<h1 class="col-md-6 col-lg-6" id="titolo">Sito di Gestione della Segreteria</h1>
 			</header>
 		</div>
-		
+		<a href="paginaLogin">Login</a>
 		<p>Benvenuti nel nostro <i>sito</i> per la <u>gestione</u>  degli <strong>studenti iscritti</strong>, 
 		dei <strong>dipartimenti</strong> e dei <strong>corsi di laurea</strong></p>
 		<p><h2>
-			Attraverso questa pagina puoi accedere a tutte le funzionalit√†
+			Attraverso questa pagina puoi accedere a tutte le funzionalit‡
 			</h2>
 			</font></p>
 		<nav class="navbar navbar-expand-sm navbar-light bg-light">
@@ -64,16 +64,16 @@
 		<div class="container-fluid">
 			<section class="row">
 				<article class="col-md-4 col-lg-4">
-					<h2 class="titolo">Come iscriversi all'universit√†</h2>
+					<h2 class="titolo">Come iscriversi all'universit‡†</h2>
 					<p>Per inscriversi seguire la seguente procedura....</p>
 				</article>
 				<article class="col-md-4 col-lg-4">
 					<h2>Come pagare le tasse</h2>
-					<p>Per pagare le tasse √® necessario scaricare un bollettino.... Per pagare le tasse √® necessario scaricare un bollettino....Per pagare le tasse √® necessario scaricare un bollettino....Per pagare le tasse √® necessario scaricare un bollettino....Per pagare le tasse √® necessario scaricare un bollettino....Per pagare le tasse √® necessario scaricare un bollettino....Per pagare le tasse √® necessario scaricare un bollettino....</p>
+					<p>Per pagare le tasse Ë necessario scaricare un bollettino.... Per pagare le tasse Ë necessario scaricare un bollettino....Per pagare le tasse Ë necessario scaricare un bollettino....Per pagare le tasse Ë necessario scaricare un bollettino....Per pagare le tasse Ë necessario scaricare un bollettino....Per pagare le tasse Ë necessario scaricare un bollettino....Per pagare le tasse Ë necessario scaricare un bollettino....</p>
 				</article>
 				<article class="col-md-4 col-lg-4">
 					<h2 class="titolo">Dicono di noi</h2>
-					<p>La nostra segreteria, secondo le ultime recensioni, √® molto....</p>
+					<p>La nostra segreteria, secondo le ultime recensioni, Ë molto....</p>
 				</article>
 			</section>
 		</div>
