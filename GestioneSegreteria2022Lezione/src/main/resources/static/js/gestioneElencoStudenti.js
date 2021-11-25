@@ -55,6 +55,9 @@ function aggiungiEventi(){
 		
 	});
 	
+	var butModifica = document.getElementById("btnModifica");
+	butModifica.addEventListener("click", modificaStudente);
+	
 }
 
 function cancellaStudenteDaTabella(studente){
@@ -90,9 +93,30 @@ function aggiungiStudenteInTabella(studente){
 	
 	var cellaNome = riga.insertCell(3);
 	cellaNome.textContent = studente.nome;
-	
-
-	
-
-	
 }
+
+function modificaStudente(){
+	var checkBox = document.querySelector('tbody input:checked');
+	if (checkBox != null){
+		let matricola = checkBox.getAttribute("id");
+		studenteDaModificare = studentiConId[matricola];
+		
+		var matr = document.querySelector("#campoMatricola").value;				
+		var cogn = document.querySelector("#campoCognome").value;
+		var nome = document.querySelector("#campoNome").value;
+	
+		studenteDaModificare.matricola = matr;
+		studenteDaModificare.cognome = cogn;
+		studenteDaModificare.nome = nome;
+		
+		modificaDaTabella(matricola, studenteDaModificare);
+		
+	}
+}
+
+function modificaDaTabella(matricola, studente){
+	var row = document.getElementById("riga_" + matricola);	
+	row.innerHTML = "<tr id=\"riga_" + studente.matricola + "\"><td><input id=\"" + studente.matricola + "\" type=\"checkbox\"></td><td>" + studente.matricola + "</td><td>" + studente.cognome + "</td><td>" + studente.nome + "</td></tr>";
+}
+
+
