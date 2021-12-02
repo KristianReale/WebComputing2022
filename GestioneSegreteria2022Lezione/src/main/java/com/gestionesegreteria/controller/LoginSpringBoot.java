@@ -10,6 +10,7 @@ import java.sql.Statement;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +28,7 @@ public class LoginSpringBoot {
 	@PostMapping("/loginServices")
 	public String faiLogin(HttpServletRequest req, HttpServletResponse resp, String username, String pass) throws IOException {
 		String sql = "select * from users where username = '" + username + "'";
-		
+		HttpSession session = req.getSession(true);
 		
 		try {
 			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", 
@@ -35,6 +36,7 @@ public class LoginSpringBoot {
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(sql);
 			if (rs.next()) {
+				session.setAttribute("username", rs.getString("username"));
 				resp.sendRedirect("/");
 //				RequestDispatcher dispacher = req.getRequestDispatcher("WEB-INF/jsp/index.jsp");
 //				dispacher.forward(req, resp);

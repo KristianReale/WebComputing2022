@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -25,16 +27,20 @@
 					<a href="https://www.treccani.it/vocabolario/segreteria/">
 						<img src="immagini/segreteria.jpg" />
 					</a>
-					<figcaption>Questa è la nostra segreteria</figcaption>
+					<figcaption>Questa Ã¨ la nostra segreteria</figcaption>
 				</figure>
 				<h1 class="col-md-6 col-lg-6" id="titolo">Sito di Gestione della Segreteria</h1>
 			</header>
 		</div>
+		
+		${username}
+		
 		<a href="paginaLogin">Login</a>
+		
 		<p>Benvenuti nel nostro <i>sito</i> per la <u>gestione</u>  degli <strong>studenti iscritti</strong>, 
 		dei <strong>dipartimenti</strong> e dei <strong>corsi di laurea</strong></p>
 		<p><h2>
-			Attraverso questa pagina puoi accedere a tutte le funzionalità
+			Attraverso questa pagina puoi accedere a tutte le funzionalitÃ 
 			</h2>
 			</font></p>
 		<nav class="navbar navbar-expand-sm navbar-light bg-light">
@@ -64,16 +70,16 @@
 		<div class="container-fluid">
 			<section class="row">
 				<article class="col-md-4 col-lg-4">
-					<h2 class="titolo">Come iscriversi all'università </h2>
+					<h2 class="titolo">Come iscriversi all'universitÃ Â </h2>
 					<p>Per inscriversi seguire la seguente procedura....</p>
 				</article>
 				<article class="col-md-4 col-lg-4">
 					<h2>Come pagare le tasse</h2>
-					<p>Per pagare le tasse è necessario scaricare un bollettino.... Per pagare le tasse è necessario scaricare un bollettino....Per pagare le tasse è necessario scaricare un bollettino....Per pagare le tasse è necessario scaricare un bollettino....Per pagare le tasse è necessario scaricare un bollettino....Per pagare le tasse è necessario scaricare un bollettino....Per pagare le tasse è necessario scaricare un bollettino....</p>
+					<p>Per pagare le tasse Ã¨ necessario scaricare un bollettino.... Per pagare le tasse Ã¨ necessario scaricare un bollettino....Per pagare le tasse Ã¨ necessario scaricare un bollettino....Per pagare le tasse Ã¨ necessario scaricare un bollettino....Per pagare le tasse Ã¨ necessario scaricare un bollettino....Per pagare le tasse Ã¨ necessario scaricare un bollettino....Per pagare le tasse Ã¨ necessario scaricare un bollettino....</p>
 				</article>
 				<article class="col-md-4 col-lg-4">
 					<h2 class="titolo">Dicono di noi</h2>
-					<p>La nostra segreteria, secondo le ultime recensioni, è molto....</p>
+					<p>La nostra segreteria, secondo le ultime recensioni, Ã¨ molto....</p>
 				</article>
 			</section>
 		</div>

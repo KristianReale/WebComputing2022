@@ -21,7 +21,7 @@ public class LoginServlet extends HttpServlet{
 		String username = req.getParameter("username");
 		String password = req.getParameter("pass");
 		
-String sql = "select * from users where username = '" + username + "'";
+		String sql = "select * from users where username = '" + username + "'";
 		
 		
 		try {
