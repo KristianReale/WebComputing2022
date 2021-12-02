@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -26,10 +28,17 @@
 					<th>AZIONI</th>
 				</tr>
 			</thead>
-			<tbody>			
+			<tbody>
+				<c:forEach items="${studenti}" var="stud">
+					<tr>
+						<td><input id="${stud.matricola}" type="checkbox" /></td>
+						<td>${stud.matricola}</td>
+						<td>${stud.cognome}</td>
+						<td>${stud.nome}</td>
+					</tr>
+				</c:forEach>					
 			</tbody>
 		</table>
-		<input type = "submit" />
 		</form>
 		
 		<input class="btn btn-danger" id="btnCancella" type="button" value="Cancella studente" />

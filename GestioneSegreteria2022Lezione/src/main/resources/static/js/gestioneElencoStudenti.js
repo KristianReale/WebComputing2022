@@ -2,7 +2,7 @@
 
 window.addEventListener("load", function(){
 	aggiungiEventi();
-	popolaTabella();	
+	//popolaTabella();	
 });
 
 function aggiungiEventi(){

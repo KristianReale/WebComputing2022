@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class LoginActions {
+public class UserProfiles {
 	//USA LA SESSION
 	@GetMapping("/user_profile")
 	public String profile(HttpServletRequest request, HttpServletResponse response) {

@@ -25,6 +25,13 @@ public class LoginSpringBoot {
 		return "login";
 	}
 	
+	@GetMapping("/faiLogout")
+	public void logout(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		HttpSession session = req.getSession();
+		session.invalidate();
+		resp.sendRedirect("/");
+	}
+	
 	@PostMapping("/loginServices")
 	public String faiLogin(HttpServletRequest req, HttpServletResponse resp, String username, String pass) throws IOException {
 		String sql = "select * from users where username = '" + username + "'";

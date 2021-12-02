@@ -33,9 +33,12 @@
 			</header>
 		</div>
 		
-		${username}
-		
-		<a href="paginaLogin">Login</a>
+		<c:if test= "${username != null}">
+			Benvenuto ${username} <a href="faiLogout">Logout</a>
+		</c:if>
+		<c:if test= "${username == null}">
+			<a href="paginaLogin">Login</a>
+		</c:if>
 		
 		<p>Benvenuti nel nostro <i>sito</i> per la <u>gestione</u>  degli <strong>studenti iscritti</strong>, 
 		dei <strong>dipartimenti</strong> e dei <strong>corsi di laurea</strong></p>
@@ -51,7 +54,7 @@
 				<li class="nav-item dropdown ">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Studenti</a>
 					<ul class="dropdown-menu ">
-						<li><a class="dropdown-item" href="gestioneStudenti/elenco_studenti.html">Elenco Studenti</a></li>
+						<li><a class="dropdown-item" href="gestioneStudenti/elencoStudenti">Elenco Studenti</a></li>
 						<li><a class="dropdown-item" href="gestioneStudenti/iscrivi_studente.html">Iscrivi uno Studente</a></li>
 					</ul>
 					
