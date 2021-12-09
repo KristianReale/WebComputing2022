@@ -34,11 +34,18 @@ function aggiungiEventi(){
 			contentType: "application/json",
 			data: JSON.stringify(studente),
 			success: function(risposta){
-				aggiungiStudenteInTabella(studente);
+				//status = 200
+				console.log(risposta);
+				if (risposta.status === "OK"){
+					aggiungiStudenteInTabella(studente);
+				}
+				
+				
 			},
 			error: function(xhr){
-				alert(xhr.responseJSON.message);
 				console.log(xhr);
+				var res = JSON.parse(xhr.responseText);
+				alert(res.messaggio);
 			}
 		});
 		
