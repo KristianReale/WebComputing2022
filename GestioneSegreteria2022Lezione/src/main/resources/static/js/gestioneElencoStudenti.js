@@ -28,7 +28,21 @@ function aggiungiEventi(){
 		
 		studentiConId[matricola] = studente;
 		
-		aggiungiStudenteInTabella(studente);
+		$.ajax({
+			type: "POST",
+			url: "/addStudente",
+			contentType: "application/json",
+			data: JSON.stringify(studente),
+			success: function(risposta){
+				aggiungiStudenteInTabella(studente);
+			},
+			error: function(xhr){
+				alert(xhr.responseJSON.message);
+				console.log(xhr);
+			}
+		});
+		
+		
 		
 	});
 	

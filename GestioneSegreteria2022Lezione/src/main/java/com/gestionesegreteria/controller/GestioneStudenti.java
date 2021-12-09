@@ -18,7 +18,7 @@ public class GestioneStudenti {
 	@GetMapping("/elencoStudenti")
 	public String elencoStudenti(HttpServletRequest req) {
 		if (req.getSession().getAttribute("username") != null) {
-			List<Studente> studenti = Database.dammiStudenti();
+			List<Studente> studenti = Database.getInstance().dammiStudenti();
 			
 			req.setAttribute("studenti", studenti);
 			
