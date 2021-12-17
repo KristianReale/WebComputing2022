@@ -1,9 +1,15 @@
 package com.gestionesegreteria;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
-import com.gestionesegreteria.model.Studente;
+import com.gestionesegreteria.persistenza.dao.CorsoDiLaureaDao;
+import com.gestionesegreteria.persistenza.dao.ScuolaDao;
+import com.gestionesegreteria.persistenza.dao.StudenteDao;
+import com.gestionesegreteria.persistenza.dao.jdbc.CorsoDiLaureaDaoJDBC;
+import com.gestionesegreteria.persistenza.dao.jdbc.ScuolaDaoJDBC;
+import com.gestionesegreteria.persistenza.dao.jdbc.StudenteDaoJDBC;
 
 public class Database {
 	private static Database instance = null;
@@ -13,25 +19,45 @@ public class Database {
 		}
 		return instance;
 	}
+	
+	Connection conn;
+	
 	private Database() {
-		studenti.add(new Studente("123321", "Bianchi", "Bruno"));
-		studenti.add(new Studente("123456", "Rossi", "Mario"));
-		studenti.add(new Studente("132111", "Verdi", "Giulia"));
-	}
-	List<Studente> studenti = new ArrayList<Studente>();
-
-	public List<Studente> dammiStudenti(){
-		return studenti;
-	}
-	
-	public boolean addStudente(Studente s) {
-		if (!studenti.contains(s)) {
-			studenti.add(s);
-			return true;
+		try {
+			conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", 
+											"postgres", "postgres");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		return false;
+//		studenti.add(new Studente("123321", "Bianchi", "Bruno"));
+//		studenti.add(new Studente("123456", "Rossi", "Mario"));
+//		studenti.add(new Studente("132111", "Verdi", "Giulia"));
+	}
+//	List<Studente> studenti = new ArrayList<Studente>();
+//
+//	public List<Studente> dammiStudenti(){
+//		return studenti;
+//	}
+//	
+//	public boolean addStudente(Studente s) {
+//		if (!studenti.contains(s)) {
+//			studenti.add(s);
+//			return true;
+//		}
+//		return false;
+//	}
+	
+	public StudenteDao getStudenteDao() {
+		return new StudenteDaoJDBC(conn);
 	}
 	
+	public CorsoDiLaureaDao getCorsoDiLaureaDao() {
+		return new CorsoDiLaureaDaoJDBC(conn);
+	}
 	
+	public ScuolaDao getScuolaDao() {
+		return new ScuolaDaoJDBC(conn);
+	}
 
 }

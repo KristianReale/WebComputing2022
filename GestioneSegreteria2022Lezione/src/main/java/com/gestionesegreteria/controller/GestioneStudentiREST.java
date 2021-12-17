@@ -16,7 +16,7 @@ public class GestioneStudentiREST {
 	public AggiuntaStudenteStatus aggiungiStudente(@RequestBody Studente studente,
 								HttpServletResponse resp) {
 		AggiuntaStudenteStatus status = new AggiuntaStudenteStatus();
-		if (Database.getInstance().addStudente(studente)) {
+		if (Database.getInstance().getStudenteDao().saveOrUpdate(studente)) {
 			status.setStatus("OK");
 			status.setMessaggio("Studente aggiunto con successo");
 		}else {
