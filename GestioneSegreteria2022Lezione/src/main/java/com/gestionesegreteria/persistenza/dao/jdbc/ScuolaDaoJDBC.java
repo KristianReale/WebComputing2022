@@ -44,13 +44,50 @@ public class ScuolaDaoJDBC implements ScuolaDao{
 	}
 
 	@Override
-	public boolean saveOrUpdate(Scuola studente) {
+	public boolean saveOrUpdate(Scuola scuola) {
+		if (scuola.getId() == 0) {
+			//INSERT
+			try {
+				scuola.setId(IdBrokerScuola.getId(conn));
+				String query = "insert into scuola "
+						+ "values (?, ?, ?)";
+				PreparedStatement st = conn.prepareStatement(query);
+				st.setLong(1, scuola.getId());
+				st.setString(2, scuola.getCodiceMeccanografico());
+				st.setString(3, scuola.getNome());
+				st.executeUpdate();
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return false;
+			}
+		}else {
+			//UPDATE
+			try {
+				String query = "update scuola "
+						+ "set codicemeccanografico = ?, nome = ? "
+						+ "where id = ?";
+				PreparedStatement st = conn.prepareStatement(query);
+				st.setString(1, scuola.getCodiceMeccanografico());
+				st.setString(2, scuola.getNome());
+				st.setLong(3, scuola.getId());
+				
+				st.executeUpdate();
+				
+			} catch (SQLException e) {
+				
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return false;
+			}
+		}
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
-	public boolean delete(Scuola studente) {
+	public boolean delete(Scuola scuola) {
 		// TODO Auto-generated method stub
 		return false;
 	}

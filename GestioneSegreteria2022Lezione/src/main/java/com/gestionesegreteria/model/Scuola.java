@@ -5,6 +5,15 @@ public class Scuola {
 	String codiceMeccanografico;
 	String nome;
 	
+	public Scuola() {
+		
+	}
+	public Scuola(String codiceMeccanografico, String nome) {
+		super();
+		this.codiceMeccanografico = codiceMeccanografico;
+		this.nome = nome;
+	}
+	
 	public Long getId() {
 		return id;
 	}

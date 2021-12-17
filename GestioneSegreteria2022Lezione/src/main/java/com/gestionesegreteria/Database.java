@@ -5,9 +5,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import com.gestionesegreteria.persistenza.dao.CorsoDiLaureaDao;
+import com.gestionesegreteria.persistenza.dao.DipartimentoDao;
 import com.gestionesegreteria.persistenza.dao.ScuolaDao;
 import com.gestionesegreteria.persistenza.dao.StudenteDao;
 import com.gestionesegreteria.persistenza.dao.jdbc.CorsoDiLaureaDaoJDBC;
+import com.gestionesegreteria.persistenza.dao.jdbc.DipartimentoDaoJDBC;
 import com.gestionesegreteria.persistenza.dao.jdbc.ScuolaDaoJDBC;
 import com.gestionesegreteria.persistenza.dao.jdbc.StudenteDaoJDBC;
 
@@ -58,6 +60,10 @@ public class Database {
 	
 	public ScuolaDao getScuolaDao() {
 		return new ScuolaDaoJDBC(conn);
+	}
+	
+	public DipartimentoDao getDipartimentoDao() {
+		return new DipartimentoDaoJDBC(conn);
 	}
 
 }

@@ -3,7 +3,6 @@ package com.gestionesegreteria.persistenza.dao;
 import java.util.List;
 
 import com.gestionesegreteria.model.Scuola;
-import com.gestionesegreteria.model.Studente;
 
 public interface ScuolaDao {
 	public List<Scuola> findAll();
